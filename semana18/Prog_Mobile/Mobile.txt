@@ -1,0 +1,19 @@
+Um arquivo XML (eXtensible Markup Language) é um formato de texto estruturado usado para armazenar e transportar dados de forma organizada, usando tags para marcar o significado de cada pedaço de informação.
+
+Ele é chamado de extensível porque você pode criar suas próprias tags, diferentes de HTML, que já tem tags pré-definidas.
+
+
+
+O Gradle no Android Studio é o sistema de automação de build que:
+
+- Compila o código-fonte e arquivos XML.
+
+- Gera a classe R com todos os IDs de recursos.
+
+- Empacota tudo no formato APK ou AAB para instalar/distribuir.
+
+- Gerencia dependências (bibliotecas externas e internas).
+
+- Configura diferentes versões do app (debug, release, flavors).
+
+Resumindo: ele é o orquestrador que transforma seu projeto Android (código + recursos) em um app pronto para rodar.
