@@ -1,0 +1,19 @@
+    fun gerar(view: View){
+        val textresultado = findViewById<TextView>(R.id.txtResultado)
+        val texto_final = StringBuilder()
+        for (i in 1..6){
+            val valor_numero = Random.nextInt(60)
+            if (i > 1){
+                texto_final.append(" - ")
+            }
+            texto_final.append(valor_numero)
+        }
+        val texto = texto_final.toString()
+        Log.d("MegaSena", "Valor final" + texto)
+        textresultado.setText(texto)
+    }
+
+    fun apagar(view: View){
+        val textresultado = findViewById<TextView>(R.id.txtResultado)
+        textresultado.setText("")
+    }
