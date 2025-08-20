@@ -1,0 +1,27 @@
+Armazenamento em nuvem
+======================
+
+Amazon S3 (Simple Storage Service)
+
+Vantagens:
+- Disponibilidade: Alta disponibilidade com replicação automática entre várias zonas de disponibilidade (AZs).
+- Disponibilidade -> 99,999999999(11 noves)
+- Segurança: IAM, ACL
+
+Capacidade:
+- Objetos podem variar de 0 a 5 TB
+
+Aplicações:
+- Análises e data lakes
+- Backup
+- Testes e Desenvolvimento de Softwares
+- Migração de dados para a nuvem
+- Arquivamento
+
+Tipos:
+- S3 Standard
+- S3 Standard-IA
+- S3 Inteligent-Tiering
+- S3 Glacier Instant Retrieval
+- S3 Glacier Flexible Retrieval
+- S3 Glacier Deep Archive
