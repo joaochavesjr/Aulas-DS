@@ -1,0 +1,6 @@
+Código Limpo: Habilidades Práticas do Agile Software
+Robert C. Martin
+
+Refatoração
+Martin Fowler
+
