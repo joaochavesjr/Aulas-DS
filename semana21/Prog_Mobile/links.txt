@@ -1,2 +1,5 @@
 SonarQube  https://www.sonarsource.com/open-source-editions/sonarqube-community-edition/
 SonarQube Scanner https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner/
+
+Firebase https://youtu.be/mUnBBI7RyIo
+
