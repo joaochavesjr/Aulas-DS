@@ -1,0 +1,4 @@
+Flutter -> https://docs.flutter.dev/get-started/install
+Windows -> https://docs.flutter.dev/get-started/install/windows/mobile
+
+https://www.youtube.com/watch?v=XeUiJJN0vsE&list=PLlBnICoI-g-d-J57QIz6Tx5xtUDGQdBFB

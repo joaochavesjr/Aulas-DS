@@ -1,0 +1,4 @@
+flutter doctor
+flutter doctor --android-licenses
+flutter create --project-name app1 app1
+flutter run
