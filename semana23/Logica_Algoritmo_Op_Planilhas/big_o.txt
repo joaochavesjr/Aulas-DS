@@ -1,0 +1,6 @@
+| Notação Big O | Nome              | Exemplo simples                            |
+| ------------- | ----------------- | ------------------------------------------ |
+| O(1)          | Tempo constante   | Acessar o 1º item de uma lista             |
+| O(n)          | Tempo linear      | Procurar um item em uma lista              |
+| O(n²)         | Tempo quadrático  | Comparar todos com todos (ex: bubble sort) |
+| O(log n)      | Tempo logarítmico | Busca binária (dividir pela metade sempre) |
