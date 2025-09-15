@@ -1,1 +1,1 @@
-Exemplo de implementacao de heranca.
+Exemplo de implementação de herança.
