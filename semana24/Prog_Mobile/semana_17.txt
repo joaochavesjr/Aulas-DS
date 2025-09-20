@@ -1,0 +1,29 @@
+1. Descrevam qual tipo de banco de dados seria mais adequado para cada caso e justifiquem sua escolha.
+    Para o sistema de controle financeiro, o mais adequado seria o banco relacional, pois este garante consistência 
+    e integridade dos dados pois permite transações. 
+
+    Para o aplicativo de rede social, o adequado é utilizar o banco de dados do tipo NoSQL, pois é otimizado para grandes 
+    volumes de dados, escalável e de alta performance.   
+
+2. Identifiquem os desafios que poderiam surgir no uso de cada tipo de banco nos contextos apresentados.
+    No banco relacional, dependendo da estrutura de dados pode não ser adequado por ter um esquema mais rígido, pode 
+    ocorrer problemas de desempenho dependendo da complexidade das consultas com grandes volumes de dados.
+
+    No caso do banco NoSQL o maior desafio é a ausencia de transações ACID que pode limitar a integridade dos dados em 
+    aplicativos onde a confiabilidade de operações encadeadas pode ser crítico. 
+
+
+3. Apresentem exemplos de operações que poderiam ser realizadas em cada banco.
+    Normalmente o banco relacional é utilizado em sistemas que a integridade de dados seja crucial para operação, como 
+    aplicações financeiras, cadastros, etc.
+
+    Os tipos de banco NoSQL são utilizados em aplicativos de uso geral, como armazenar dados coletados por dispositivos IoT,
+    redes sociais, dados para telemetria, analytics entre outros.
+
+
+4. Reflitam sobre como a escolha do banco de dados impactaria o desempenho e a manutenção do sistema no longo prazo.
+    No caso do banco relacional, o problema a longo prazo é o volume de dados, que pode ser minimizado utilizando a criação 
+    de índices, mas eventualmente será necessário efetuar o expurgo para manter o desempenho adequado.
+
+    Apesar de ser ser muito robusto, o grande volume de dados pode trazer saturação de recursos como memória e CPU, gerando
+    gargalos.

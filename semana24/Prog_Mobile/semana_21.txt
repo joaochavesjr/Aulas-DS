@@ -1,0 +1,14 @@
+1. Quais etapas vocês incluiriam no planejamento do projeto?
+    - Planejamento
+    - Desenvolvimento
+    - Documentação
+
+2. Como assegurar que o projeto atende às necessidades do cliente?
+    Criar um planejamento, documentar criando diagramas, especificação e protótipo e validando com o cliente, antes de iniciar a implementação.
+
+3. Por que é importante documentar o projeto?
+    É importante pois assegura que a implementação seguiu os requisitos com de acordo do cliente e também para futuras consultas para expansão ou 
+    manutenção.
+
+4. Como vocês apresentariam o projeto aos stakeholder?
+    Apresentaria a documentação, incluindo diagramas e protótipos para validação e esclarecimento de dúvidas.

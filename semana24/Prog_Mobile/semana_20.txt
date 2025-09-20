@@ -1,0 +1,13 @@
+1. Como os padrões de design de interação ajudam na consistência do aplicativo?
+    Estabelecem convenções que guiam as interações dos usuários, como gestos (deslizar, tocar e segurar) e navegação hierárquica.
+    Exemplo: botões com ícones familiares, como "lupa", para busca, ou "casa", para tela inicial.
+
+2. Por que o feedback visual é importante para as interações com a interface?
+    Para o usuário perceber, por exemplo, que uma ação solicitada foi executada, como o feedback de um botão pressionado.
+    Também é necessário um feedbnack visual quando uma ação foi solicitada e está aguarndando uma informação externa para concluir.
+
+3. O que pode ser feito para evitar erros no processo de exclusão de transações?
+    Implementando mensagens claras que a operação vai excluir uma informação e exigir confirmação para efetuar sua conclusão.
+
+4. Como justificar a inclusão de acessibilidade no design de interação?
+    A justificativa é aumentar a inclusão e permitir o uso da aplicação sem restrições.

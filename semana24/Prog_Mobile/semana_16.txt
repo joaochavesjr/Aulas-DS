@@ -1,0 +1,21 @@
+1.	Como os atributos ARIA podem melhorar a acessibilidade do aplicativo “Cozinha fácil”?
+    Adicionando atributos ARIA (Accessible Rich Internet Applications) ao aplicativo "Cozinha fácil", 
+    podemos fornecer informações adicionais para tecnologias assistivas, como leitores de tela. 
+    Isso ajuda a descrever melhor os elementos da interface, como botões, menus e formulários, 
+    tornando-os mais compreensíveis para usuários com deficiências visuais. 
+    Por exemplo, podemos usar `aria-label` para fornecer descrições claras de botões.
+
+2.	Quais são os desafios ao se implementar navegação por voz em um aplicativo?
+    Implementar navegação por voz pode apresentar vários desafios, como o reconhecimento preciso de comandos de voz. 
+    Para que isso funcione, é necessário que os elementos do aplicativo tenham descrições claras e sejam facilmente identificáveis.
+
+3.	Quais ajustes você faria para melhorar a experiência de usuários que dependem de leitores de tela?
+    Para melhorar a experiência de usuários que dependem de leitores de tela, deveríamos efetuar os seguintes ajustes:
+    - Garantir que todos os elementos interativos tenham rótulos claros e descritivos.
+    - Implementar feedback sonoro ou visual para ações importantes, como o envio de um formulário.
+    - Testar o aplicativo com diferentes leitores de tela para garantir compatibilidade.
+
+4.	Por que é importante testar o aplicativo com usuários reais que possuem deficiências?
+    Testar o aplicativo com usuários reais que possuem deficiências é crucial porque eles podem fornecer feedback valioso sobre a usabilidade e acessibilidade do aplicativo. 
+    Eles podem identificar problemas que os desenvolvedores podem não ter considerado, garantindo que o aplicativo atenda às necessidades reais dos usuários. 
+    Além disso, isso ajuda a validar as soluções implementadas e a garantir que o aplicativo seja inclusivo para todos os usuários.

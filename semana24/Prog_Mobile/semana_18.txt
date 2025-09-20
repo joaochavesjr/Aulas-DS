@@ -1,0 +1,18 @@
+1. Qual a importância de autenticar uma API corretamente em uma integração com serviços externos?
+    Permitir o acesso aos dados, pela API, apenas por pessoas autorizadas. 
+
+2. Por que é essencial compreender o formato de resposta de uma API antes de consumi-la?
+    Para efetuar o processamento correto dos dados recebidos, por exemplo tratar a estrutura corretamente
+    dos dados fornecidos por JSON ou XML.
+
+3. Quais estratégias podem ser usadas para tratar erros ao consumir dados de API?
+    Uma estratégia importante é analisar os códigos de status HTTP, para identificar sucesso (200) ou problema (500) na resposta de uma consulta.
+
+4. Como vocês aplicariam o conceito de “tratamento de erros” no cenário apresentado?
+    Conforme o retorno do status HTTP é possível tratar e informar corretamente o usuário sobre o comportamento do acesso à API.
+    Por exemplo, para cada código há um motivo:
+        500: Erro no servidor;
+        404: Recurso não encontrado no servidor;
+        401: Erro de autorização;
+
+        

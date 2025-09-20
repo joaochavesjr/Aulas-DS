@@ -1,0 +1,23 @@
+1. Quais são os principais serviços de armazenamento em nuvem disponíveis e como escolher o 
+mais adequado?
+    Amazon S3
+    Azure Blob Storage
+    Google Cloud Storage
+
+    Para a escolha mais adequada, temos que observar os seguintes pontos:
+        - Localização;
+        - Recursos;
+        - Frequencia de acesso;
+
+
+2. Por que é importante definir a localização geográfica de um bucket?
+    A localização geografica impacta a latência e aspectos de legislação, como exigência de armazenamento
+    de dados apenas em território nacional.
+
+3. O que são classes de armazenamento e como escolher a mais adequada para um bucket?
+    As classes de armazenamento definem a frequência, durabilidade, custo de armazenamento e tempo de disponibilidade 
+    dos dados. Conforme a escolha também impacta nos custos dos serviços.
+
+4. Como criar uma política de retenção eficiente para buckets?
+    - Criando períodos de retenção, que permita que os dados possam migrar para outras categorias diminuindo o custo.
+    - Criar política de exclusão de objetos que não sejam mais necessários;
