@@ -1,0 +1,12 @@
+1. Qual é a importância das animações baseadas em Física para a experiência do usuário em um aplicativo móvel?
+   Animações baseadas em física cria um feedback visual intuitivo e agradável.
+
+2. Como as transições personalizadas podem impactar a percepção de um usuário ao navegar pelo aplicativo?
+   As transições personalizadas tornam a experiência mais natural e agradável, dando um toque pessoal para o aplicativo, 
+   como exemplo a ferramenta de leitura do iPad que faz a transição de página como em um livro físico.
+
+3. Cite um exemplo de quando uma animação poderia ser excessiva e prejudicar a experiência do usuário.
+   Quando a animação é muito carregada e demora muito interferindo na operação do aplicativo.
+
+4. Qual é o benefício de utilizar animações que simulam o comportamento de "mola" ao interagir com elementos da interface?
+  Melhora a experiência do usuário fornecendo um feedback visual e tátil, tornando a experiência mais natural.
