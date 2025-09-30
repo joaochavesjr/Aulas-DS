@@ -1,0 +1,45 @@
+Publicação nas Stores.
+
+Google Play (Android):
+  - Conta de desenvolvedor no Google Play Console. Utilizar e-mail específico para isso.
+  - Preencher detalhes do dev;
+  - Pagar taxa de inscrição vitalícia: US$ 25.00;
+  - Criar chaves e certificados para garantir autenticidade;
+  - No caso de empresa fornecer o D-U-N-S;
+  - Enviar o pacote APK/AAB
+  - Nome do app (limite 50 caracteres);
+  - Descrição breve (limite 80 caracteres);
+  - Descrição completa (limite 4000 caracteres)
+  - Atenda às políticas de dados do usuário e permissões;
+  - Submeter uma declaração de privacidade se o app coletar dados sensíveis;
+
+Apple Store (IOS):
+  - Conta de desenvolvedor da Apple;
+  - Pagar taxa ANUAL: US$ 99.00;
+  - No caso de empresa fornecer o D-U-N-S;
+  - Criar os certificados digitais;
+  - nome do app (30 caracteres);
+  - subtítulo (30 caracteres);
+  - palavra-chave (max.: 100 caracteres)
+  - O app deve ser compatível com o guideline "Human Interface Guidelines";
+  - Submeter uma declaração de uso para APIs sensíveis;
+
+Políticas de Publicação:
+- Google Play
+
+· Conteúdo proibido: apps que promovem ódio, violência ou pornografia não podem ser publicados.
+· Políticas de privacidade: apps que coletam dados devem informar como esses dados são usados.
+· Políticas de permissões: apenas permissões essenciais para o funcionamento do app devem ser solicitadas.
+
+- App Store
+
+· Diretrizes de design: apps devem ser funcionais, precisos e sem bugs.
+· Restrições: conteúdo duplicado ou apps de baixa qualidade podem ser rejeitados.
+· Regras específicas: uso de APIs privadas ou comportamento enganoso não são permitidos.
+
+
+Ícones de aplicação: o ícone é a primeira impressão do usuário sobre o app
+Requisitos técnicos:
+
+o Google Play: 512 x 512 px, PNG, até 1024 kB;
+o App Store: 1024 x 1024 px, sem transparência.
