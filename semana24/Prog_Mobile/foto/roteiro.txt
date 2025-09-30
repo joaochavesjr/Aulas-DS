@@ -1,0 +1,260 @@
+1. Configuração do AndroidManifest.xml
+Adicione as seguintes permissões e a declaração do FileProvider dentro da tag <application>:
+code Xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" /> <!-- Necessário para Android 9 (API 28) e anteriores para salvar em armazenamento público. Para API 29+ o MediaStore é suficiente. -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SeuProjeto">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+uses-permission android:name="android.permission.CAMERA": Permissão para usar a câmera.[1]
+uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE": Permissão para gravar no armazenamento externo. Isso é relevante para Android 9 (API 28) e versões anteriores, para salvar fotos em diretórios públicos. Para API 29 (Android 10) e superior, o MediaStore é o método preferencial e não requer essa permissão.[1]
+uses-feature android:name="android.hardware.camera": Indica que seu aplicativo usa a câmera. android:required="false" significa que o app pode ser instalado em dispositivos sem câmera.[2]
+FileProvider: É essencial para compartilhar arquivos de forma segura com outros aplicativos, como o aplicativo da câmera do sistema.[1][3][4]
+
+2. Criação do arquivo res/xml/file_paths.xml
+Crie um novo diretório xml dentro de res se ele não existir, e então crie o arquivo file_paths.xml com o seguinte conteúdo:
+code Xml
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-files-path name="my_images" path="Pictures" />
+</paths>
+Este arquivo define os caminhos que o FileProvider pode acessar. external-files-path aponta para Context.getExternalFilesDir(), que é um diretório privado do seu aplicativo no armazenamento externo.
+
+3. Configuração do build.gradle (Module :app)
+Dentro do bloco android {}, adicione viewBinding { enabled = true } para facilitar a interação com os elementos da UI.[5]
+code
+Gradle
+android {
+    // ... outras configurações
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+4. Layout da Atividade (activity_main.xml)
+Adicione um Button para disparar a câmera e um ImageView para exibir a foto capturada.
+code
+Xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/takePictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tirar Foto"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:background="#E0E0E0"
+        android:contentDescription="Foto Capturada" />
+
+</LinearLayout>
+
+5. Código Kotlin da Atividade (MainActivity.kt)
+code
+Kotlin
+package com.example.seunome.seumodulo
+
+import android.Manifest
+import android.content.ContentValues
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
+import android.os.Build
+import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import com.example.seunome.seumodulo.databinding.ActivityMainBinding
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var latestTmpUri: Uri // Armazenará a URI da foto temporária
+
+    // Launcher para solicitar permissões de câmera e armazenamento
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+            if (isGranted) {
+                takePicture() // Se a permissão for concedida, tira a foto
+            } else {
+                Toast.makeText(this, "Permissão de câmera negada.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    // Launcher para iniciar o aplicativo da câmera e receber o resultado
+    private val takePictureLauncher: ActivityResultLauncher<Uri> =
+        registerForActivityResult(ActivityResultContracts.TakePicture()) { success: Boolean ->
+            if (success) {
+                // A foto foi capturada e salva em latestTmpUri
+                binding.imageView.setImageURI(latestTmpUri)
+                // Opcional: Salvar a imagem na galeria (armazenamento público)
+                saveImageToGallery(latestTmpUri)
+            } else {
+                Toast.makeText(this, "A captura da foto foi cancelada ou falhou.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.takePictureButton.setOnClickListener {
+            checkCameraPermissionAndTakePicture()
+        }
+    }
+
+    private fun checkCameraPermissionAndTakePicture() {
+        when {
+            // Verifica se a permissão da câmera já foi concedida
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                takePicture() // Permissão já concedida, pode tirar a foto
+            }
+            // Se a permissão foi negada anteriormente e o usuário precisa de uma explicação
+            shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) -> {
+                Toast.makeText(this, "É necessária a permissão da câmera para tirar fotos.", Toast.LENGTH_LONG).show()
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+            }
+            // Solicita a permissão da câmera
+            else -> {
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+            }
+        }
+    }
+
+    private fun takePicture() {
+        try {
+            // Cria um arquivo temporário para a foto
+            latestTmpUri = getTmpFileUri()
+            takePictureLauncher.launch(latestTmpUri) // Inicia o app da câmera
+        } catch (e: IOException) {
+            Toast.makeText(this, "Erro ao criar arquivo temporário: ${e.message}", Toast.LENGTH_LONG).show()
+            e.printStackTrace()
+        }
+    }
+
+    // Cria um arquivo temporário para armazenar a foto e retorna sua URI
+    private fun getTmpFileUri(): Uri {
+        val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+        val photoFileName = "JPEG_${timestamp}_"
+        // Usa getExternalFilesDir(Environment.DIRECTORY_PICTURES) para um diretório privado do app
+        val storageDir = getExternalFilesDir("Pictures")
+        val imageFile = File.createTempFile(photoFileName, ".jpg", storageDir)
+
+        return FileProvider.getUriForFile(
+            applicationContext,
+            "${applicationContext.packageName}.provider",
+            imageFile
+        )
+    }
+
+    // Salva a imagem na galeria (armazenamento público)
+    private fun saveImageToGallery(imageUri: Uri) {
+        val resolver = applicationContext.contentResolver
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, "IMG_${System.currentTimeMillis()}.jpg")
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                put(MediaStore.MediaColumns.RELATIVE_PATH, "DCIM/Camera") // Para Android 10+ [3, 11]
+                put(MediaStore.MediaColumns.IS_PENDING, 1) // Indica que o arquivo está sendo processado [11]
+            }
+        }
+
+        var newUri: Uri? = null
+        try {
+            newUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+            newUri?.let { uri ->
+                resolver.openOutputStream(uri)?.use { outputStream ->
+                    resolver.openInputStream(imageUri)?.use { inputStream ->
+                        inputStream.copyTo(outputStream)
+                    }
+                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    contentValues.clear()
+                    contentValues.put(MediaStore.MediaColumns.IS_PENDING, 0)
+                    resolver.update(uri, contentValues, null, null)
+                }
+                Toast.makeText(this, "Foto salva na galeria!", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: IOException) {
+            Toast.makeText(this, "Erro ao salvar imagem: ${e.message}", Toast.LENGTH_LONG).show()
+            e.printStackTrace()
+            newUri?.let { resolver.delete(it, null, null) } // Limpa se houver erro
+        }
+    }
+}
+Explicação do Código:
+ActivityResultContracts.RequestPermission(): Utilizado para solicitar permissões em tempo de execução. O callback isGranted informa se a permissão foi concedida.[1][5]
+ActivityResultContracts.TakePicture(): Este contrato é a maneira moderna e recomendada de iniciar o aplicativo da câmera para tirar uma foto. Ele aceita uma Uri como entrada, onde o aplicativo da câmera deve salvar a imagem. Ele retorna true no callback se a foto foi tirada com sucesso e salva na Uri fornecida.[6][7][8]
+latestTmpUri: Uma variável para armazenar a Uri do arquivo temporário onde a foto será salva pelo aplicativo da câmera.
+getTmpFileUri(): Esta função cria um arquivo temporário no diretório de imagens privado do seu aplicativo (getExternalFilesDir("Pictures")) e gera uma Uri para ele usando FileProvider. É crucial usar FileProvider para compartilhar URIs de arquivos de forma segura com outros aplicativos.[1][3][4]
+checkCameraPermissionAndTakePicture(): Este método verifica se a permissão CAMERA foi concedida. Se sim, ele chama takePicture(). Caso contrário, ele solicita a permissão ao usuário.[1]
+takePicture(): Prepara uma Uri temporária para a foto e lança o takePictureLauncher para abrir o aplicativo da câmera.
+saveImageToGallery(imageUri: Uri) (Opcional): Este método demonstra como salvar a imagem capturada no armazenamento público (galeria do dispositivo) usando MediaStore.[9]
+Para Android 10 (API 29) e superior, ele usa MediaStore.MediaColumns.RELATIVE_PATH para especificar o subdiretório e MediaStore.MediaColumns.IS_PENDING para lidar com o processo de escrita do arquivo, garantindo que ele não seja acessível antes de ser totalmente salvo.[9][10]
+A imagem é copiada do imageUri temporário para o novo Uri gerado pelo MediaStore.
+WRITE_EXTERNAL_STORAGE é geralmente desnecessário para Android 10+ ao usar MediaStore para armazenamento de mídia.[1]
