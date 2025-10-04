@@ -24,7 +24,7 @@ def home():
 
 @app.route("/imagem", methods=["GET"])
 def get_imagem():
-    return jsonify({'url': 'http://192.168.10.107:5000/static/images/clean_code.jpg'})
+    return jsonify({'url': 'http://10.0.2.2:5000/static/images/clean_code.jpg'})
 
 @app.route("/static/images/<path:filename>")
 def serve_image(filename):
@@ -32,4 +32,4 @@ def serve_image(filename):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
