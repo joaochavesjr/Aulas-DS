@@ -1,0 +1,26 @@
+ProGuard é uma ferramenta que realiza a ofuscação de código em projetos Java e Android, tornando nomes de classes, métodos e atributos mais difíceis de entender, além de remover código morto e otimizar o aplicativo. A principal função da ofuscação com ProGuard é aumentar a segurança do app contra engenharia reversa e reduzir o tamanho do arquivo final.
+
+O que ProGuard faz:
+Renomeia elementos do código para dificultar a leitura de quem acessar o APK ou JAR de fora.
+
+Remove código que não está sendo utilizado (dead code), otimizando o tamanho final do app.
+
+Pode relatar avisos (warnings) quando encontra problemas na configuração ou dependências, que precisam ser corrigidos para o processo de ofuscação concluir corretamente.
+
+Como a ofuscação ajuda:
+Dificulta a cópia ou clonagem do código por terceiros, já que a estrutura original do código fica mascarada.
+
+Reduz o risco de cópia de algoritmos sensíveis, especialmente quando toda a lógica de negócio está no dispositivo móvel.
+
+Traz melhorias de performance e uso de memória ao eliminar instruções e classes não utilizadas.
+
+Arquivos gerados após a ofuscação:
+dump.txt: estrutura interna das classes do APK.
+
+mapping.txt: mapeamento entre nomes originais e ofuscados, essencial para interpretar stacktraces.
+
+seeds.txt: lista das classes/membros que não foram ofuscados.
+
+usage.txt: lista de tudo que foi removido.
+
+O uso do ProGuard é gratuito e recomendado para aumentar a segurança e desempenho de aplicativos, principalmente Android.
