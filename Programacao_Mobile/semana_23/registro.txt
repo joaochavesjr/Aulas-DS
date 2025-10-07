@@ -1,0 +1,19 @@
+1. Vocês recebem uma mensagem de um colega: "Estamos enfrentando problemas com a publicação do build, pois os testes não estão passando no pipeline. Qual seria a sua abordagem para resolver esse problema?"
+
+  R.: Analisar os logs gerados pelas ferramentas automatizadas de CI/CD, para identificar o problema, corrigir e submeter novamente para sanar os problemas encontrados.
+
+2. O gerente de TI solicita um e-mail detalhado explicando como a automação do build e release pode reduzir o tempo de publicação e minimizar erros manuais. Redija sua resposta.
+
+  R.: O processo automatizado para geração da Build do pacote final, permite a redução de erros manuais, acelera a publicação do app e mantem o ciclo de atualizações consistentes.
+  Podemos utilizar ferramentas de integração como Fastlane para Android e iOS, bem como scripts de automa e pipelines de CI/CD.
+  Este processos permitem, após a conclusão dos testes, o build automático e envio para publicação.
+
+
+3. Durante uma reunião, um colega questiona: "Como podemos garantir a segurança e a integridade do aplicativo durante o processo automatizado de release?"
+
+  R.: Podemos inserir na pipeline, ferramentas de cobertura de código como SonarQube, que garante a geração de relatórios apontando problemas de segurança e também qualidade de código.
+  Também é importante incluir, no pipeline, ferramentas de ofuscação de código que dificulta a cópia ou clonagem do código por terceiros, ampliando a segurança da app dificultado o processo de engenharia reversa.  
+
+4. Vocês foram solicitados para elaborar um relatório sobre o fluxo de automação de build e release adotado pela sua equipe. Quais são os pontos críticos que vocês destacariam e como recomendariam o monitoramento contínuo do processo?
+ 
+  R.: Criar rotinas para integração com analises de logs das ferramentas de CI/CD para gerar alertas e alarmes e notificação imediata de problemas encontradas no pipeline, durante os processos de build.

@@ -1,0 +1,15 @@
+1. Quais ferramentas podem ser usadas para testes de apps em beta?
+ R.: No caso do Android podemos utilizar o Firebase Test Lab;
+     No caso da IOS, o TestFlight é a ferramenta utilizada para distribuição beta.
+
+2. Qual é a importância de fazer regressão após corrigir erros?
+ R.: Efetuar testes de regressão garante que as novas correções não quebrem funcionalidades já existentes.
+
+3. Como responderiam a um gerente que pede um resumo das ferramentas de debugging?
+ R.: Devemos responder que as seguintes ações serão executadas:
+     - Verificar os logs e relatórios com as ocorrências de erros e assim analisar suas causas;
+     - Efetuar testes, em dispositivos reais (não emuladores no Android Studio), para validar as correções;
+     - Documentar todos os procedimentos para registro e consultas futuras.
+
+4. Quais erros comuns podem ocorrer se o debugging não for bem executado?
+ R.: Testar somente no emulador, pode ocultar comportamentos que serão vistos apenas em dispositivos reais, por exemplo, acesso às câmeras do dispositivo.
