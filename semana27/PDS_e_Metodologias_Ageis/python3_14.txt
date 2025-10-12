@@ -1,0 +1,19 @@
+Python 3.14
+-----------
+
+Free-Threading: Suporte oficial para a substituição do Global Interpreter Lock (GIL), permitindo que threads rodem em paralelo. É necessário compilar o Python ou baixar uma versão específica para utilizá-lo. 
+
+Compilação Just-In-Time (JIT): A compilação JIT experimental foi aprimorada para acelerar a execução do código. 
+
+Subinterpreters: O suporte a subinterpreters foi expandido na biblioteca padrão, permitindo a 
+execução concorrente de diferentes intérpretes Python. 
+
+Template Strings: Uma nova sintaxe para strings, t-strings, foi introduzida, tornando a interpolação de strings mais segura e eficiente. 
+
+Avaliação adiada de anotações: A avaliação adiada de anotações de tipo simplifica o uso de type hints, especialmente em projetos maiores. 
+
+Mensagens de erro aprimoradas: As mensagens de erro agora são mais claras e fornecem sugestões para corrigir os problemas, incluindo dicas de digitação para comandos de argumentos. 
+
+REPL mais inteligente: O REPL (Read-Eval-Print Loop) agora oferece destaque de sintaxe colorido e outras melhorias para facilitar a experiência interativa. 
+
+Melhorias na biblioteca padrão: A biblioteca padrão recebeu diversas atualizações, como o módulo zstd para compressão e melhorias no asyncio. 
