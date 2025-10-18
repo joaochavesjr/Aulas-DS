@@ -1,0 +1,34 @@
+Objeto: Desenvolvimento de software "Sistema de Gerenciamento de Tarefas Personalizado" utilizando metodologia ágil (Scrum/Kanban).
+
+Escopo:
+O escopo inicial será definido em um Product Backlog, que será priorizado e refinado continuamente.
+O desenvolvimento ocorrerá em Sprints/Iterações de 8 semanas.
+Novas funcionalidades e alterações serão discutidas e priorizadas em reuniões de planejamento.
+
+Entregas:
+Entregas incrementais e funcionais ao final de cada Sprint (semana).
+Documentação de usuário e técnica conforme acordado.
+
+Metodologia:
+Scrum/Kanban: Realização de Daily Scrums/Stand-ups, Revisões de Sprint, Retrospectivas de Sprint.
+
+Colaboração: A Contratante designará um Product Owner para colaborar ativamente com a equipe do Contratado.
+
+Preço e Pagamento:
+Modelo de Pagamento: Por Sprint com Base em Story Points/etc.
+Valor: R$ 5000,00
+Faturamento: Semanal
+
+Prazos:
+Início do Projeto: 01/11/2025
+Duração Estimada:  15/01/2025 (Sujeita a alterações conforme priorização do backlog).
+
+Propriedade Intelectual:
+Todo o código-fonte, designs e demais materiais desenvolvidos serão de propriedade da Contratante.
+
+Garantia e Suporte:
+O Contratado garante o software por 60 dias após a aceitação final de cada funcionalidade/módulo.
+Suporte técnico adicional pode ser contratado separadamente.
+
+Rescisão:
+Ambas as partes podem rescindir o contrato com aviso prévio de [Número] dias, em caso de descumprimento das cláusulas.

@@ -1,0 +1,12 @@
+A. Como vocês estruturariam o processo de coleta de ideias para garantir que todas as sugestões sejam registradas e analisadas?
+ R.: Coletando feedback dos usuários, sugestões das equipes internas, análise de tendências do mercado, comparação com apps concorrentes.
+
+B. Quais critérios vocês utilizariam para priorizar as funcionalidades sugeridas e por quê?
+ R.: A priorização de novas funcionalidades ou melhorias deve levar em conta pincipalmente o impacto na experiência para os usuários alinhados com os objetivos estratégicos da empresa. É importante também considerar o impacto financeiro das implementações conforme o esforço necessário de cada nova funcionalidade.
+
+C. De que forma o uso de metodologias ágeis pode facilitar o planejamento e a execução do desenvolvimento da próxima versão?
+ R.: As metodologias ágeis, como Scrum e Kanban, permitem ciclos curtos de desenvolvimento e ajustes contínuos. Ao incluir o feedback dos usuários no product backlog, é possível priorizar não só as melhorias e correções de bugs mas também atender as solicitações dos usuários permitindo evoluir o app de forma a atender várias frentes.
+
+D. Como a comunicação entre os departamentos pode contribuir para o sucesso do processo de priorização e planejamento?
+ R.: A comunicação entre os departamentos pode permitir explorar ideias para melhorias do app que tragam outras oportunidades estratégicas, as vezes não 
+percebida pelos times de desenvolvimento, como uma nova funcionalidade para atender um recurso de marketing que não havia sido prevista anteriormente.
