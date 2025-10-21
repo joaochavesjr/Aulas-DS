@@ -2,6 +2,7 @@ Entregar trabalho Programação Aplicada a Ciência de Dados
 enviar e-mail para: joaojunior05@prof.educacao.sp.gov.br
 
 Data Entrega: 12/11/2025
+Pode ser utilizado o Google Colab, Jupyter Notebook, ou VSCode (Necessário ter o pandas instalado).
 
 - Criar um arquivo CSV (semelhante ao arquivo disponível na Aula 3 da semana 25)
   Colunas com nomes (texto) e valores (inteiros)
@@ -15,6 +16,7 @@ Data Entrega: 12/11/2025
   df.describe()
   df.sort_values(by="Nome_Coluna") # Nome_Coluna é o nome de uma coluna de texto do seu arquivo CSV
   df['Nome_Coluna'].value_counts() # Nome_Coluna é o nome de uma coluna de texto do seu arquivo CSV
+
 
 
 
