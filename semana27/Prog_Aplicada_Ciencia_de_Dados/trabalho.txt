@@ -1,0 +1,20 @@
+Entregar trabalho Programação Aplicada a Ciência de Dados
+enviar e-mail para: joaojunior05@prof.educacao.sp.gov.br
+
+Data Entrega: 12/11/2025
+
+- Criar um arquivo CSV (semelhante ao arquivo disponível na Aula 3 da semana 25)
+  Colunas com nomes (texto) e valores (inteiros)
+- Importar o arquivo CSV, e carregar dentro da biblioteca pandas criando um dataframe;
+- Imprimir o dataframe (Pode ser uma imagem extraída do Colab);
+- Colocar as saídas dos seguintes comandos:
+  df.info()
+  df.dtypes
+  df.head()
+  df.tail()
+  df.describe()
+  df.sort_values(by="Nome_Coluna") # Nome_Coluna é o nome de uma coluna de texto do seu arquivo CSV
+  df['Nome_Coluna'].value_counts() # Nome_Coluna é o nome de uma coluna de texto do seu arquivo CSV
+
+
+

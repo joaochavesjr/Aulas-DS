@@ -1,0 +1,13 @@
+Entregar trabalho Lógica, Algoritmo e Operação de Planilhas
+enviar e-mail para: joaojunior05@prof.educacao.sp.gov.br
+
+Data Entrega: 12/11/2025
+
+- Explicar o que é uma busca linear e busca binária;
+- Exemplo de código em Python de cada tipo (busca linear e busca binária);
+- Resumo da Teoria da Cor (Princípios, Psicologia, etc);
+- Criar um código (Python) para contar vogais em uma string e explicar o código.
+
+
+
+

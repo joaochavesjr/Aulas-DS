@@ -1,0 +1,53 @@
+Entregar trabalho Lógica e Linguagem de Programação
+enviar e-mail para: joaojunior05@prof.educacao.sp.gov.br
+
+Data Entrega: 12/11/2025
+
+Completar o programa para efetuar a reserva de cadeiras em uma sala de cinema,
+com 100 cadeiras disponíveis, conforme o código inicial (Python) abaixo:
+# 0 = Cadeira vaga
+# 1 = Cadeira ocupada
+
+cadeiras = [
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+           ]
+
+def reservar(linha, coluna, reserva=0):
+    # Completar
+    # efetuar a reserva colocando 1 na linha e coluna informada no parametro
+    # se o valor do parametro reserva for 0, será cancelada.
+
+
+def imprimir_cadeiras():
+    for linha in cadeiras:
+        # Completar
+        # colocar o código que faz a impressão da linha
+
+def contar_cadeiras_ocupadas():
+    total = 0
+    for linha in cadeiras:
+        for coluna in linha:
+            # Completar o código da função, somando todas as cadeiras ocupadas
+    
+    # No final imprimir o total de cadeiras ocupadas
+
+
+# Teste do código
+reservar(2, 3, 1)
+reservar(3, 3, 1)
+reservar(1, 4, 1)
+reservar(4, 5, 1)
+reservar(6, 6, 1)
+
+imprimir_cadeiras()
+
+contar_cadeiras_ocupadas()
