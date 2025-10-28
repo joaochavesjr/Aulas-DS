@@ -1,0 +1,11 @@
+2025-10-28 16:32:45,254 - __main__ - DEBUG - Mensagem de debug (depuração)
+2025-10-28 16:32:45,255 - __main__ - INFO - Mensagem simples
+2025-10-28 16:32:45,256 - __main__ - WARNING - Mensagem de alerta.
+2025-10-28 16:32:45,256 - __main__ - ERROR - Mensagem de erro.
+2025-10-28 16:32:45,256 - __main__ - CRITICAL - Mensagem de erro crítico.
+2025-10-28 16:32:45,256 - __main__ - ERROR - An exception occurred!
+Traceback (most recent call last):
+  File "/Users/joao/workspace/github/Aulas-DS/semana27/Logica_e_ling_programacao/exemplo_log.py", line 26, in <module>
+    result = 10 / 0
+             ~~~^~~
+ZeroDivisionError: division by zero
